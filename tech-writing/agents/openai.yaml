@@ -1,0 +1,4 @@
+interface:
+  display_name: "Tech Writing"
+  short_description: "Write clear, reader-first technical docs"
+  default_prompt: "Use $tech-writing to draft or revise this technical document for clarity and usability."
