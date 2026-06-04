@@ -1,10 +1,19 @@
 ---
 name: capture-idea
-description: Capture and refine a new idea through grilling, then save a structured detail doc to ~/playground/pensieve/. Use when user says "add idea", "capture idea", "log this idea", "save this idea", or invokes /capture-idea.
+description: Capture and refine a new idea through grilling, then save a structured detail doc to ~/playground/pensieve/{name}/index.md. Use when user says "add idea", "capture idea", "log this idea", "save this idea", or invokes /capture-idea.
 ---
 
 ## Goal
-Turn a raw idea into a refined, actionable document via grilling, then log it to the projects knowledge base.
+Turn a raw idea into a refined, actionable document via grilling, then log it to the Pensieve knowledge base.
+
+## Structure
+Each idea lives in its own folder:
+```
+~/playground/pensieve/
+  INDEX.md               ← master map of all ideas
+  {name}/
+    index.md             ← full idea detail doc
+```
 
 ## Steps
 
@@ -21,8 +30,8 @@ Invoke the `/grill-me` skill with the idea as input. Run the full grilling loop 
 
 Do NOT skip grilling. This is the core step.
 
-### 3. Produce a refined detail doc
-After grilling, synthesize into `~/playground/pensieve/{name}.md`:
+### 3. Create idea folder and detail doc
+After grilling, create `~/playground/pensieve/{name}/index.md`:
 
 ```markdown
 ---
@@ -62,15 +71,15 @@ tags: [{relevant tags}]
 {Anything else from the grilling session worth preserving}
 ```
 
-### 4. Log to IDEAS.md
-Append a row to `~/playground/pensieve/IDEAS.md`:
+### 4. Update INDEX.md
+Append a row to `~/playground/pensieve/INDEX.md`:
 ```
-| idea | [{name}](./{name}.md) | {one-line description} |
+| idea | [{name}](./{name}/index.md) | {tags} |
 ```
 
 ### 5. Commit and push
-Run in `~/playground/pensieve/`:
 ```bash
+cd ~/playground/pensieve
 git add .
 git commit -m "feat: capture idea {name}"
 git push
@@ -78,7 +87,7 @@ git push
 
 ### 6. Confirm
 Tell user:
-- Detail doc saved at `~/playground/pensieve/{name}.md`
-- Logged in `IDEAS.md`
+- Detail doc at `~/playground/pensieve/{name}/index.md`
+- Logged in `INDEX.md`
 - Pushed to https://github.com/mostafa-K-raihan/Pensieve
 - "Start your next session from this doc — it has everything you need to continue."
