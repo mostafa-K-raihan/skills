@@ -1,6 +1,6 @@
 ---
 name: capture-idea
-description: Capture and refine a new idea through grilling, then save a structured detail doc to ~/playground/pensieve/{name}/index.md. Use when user says "add idea", "capture idea", "log this idea", "save this idea", or invokes /capture-idea.
+description: Capture and refine a new idea through grilling, then save a structured detail doc to ~/playground/pensieve/ideas/{name}/index.md. Use when user says "add idea", "capture idea", "log this idea", "save this idea", or invokes /capture-idea.
 ---
 
 ## Goal
@@ -31,7 +31,7 @@ Invoke the `/grill-me` skill with the idea as input. Run the full grilling loop 
 Do NOT skip grilling. This is the core step.
 
 ### 3. Create idea folder and detail doc
-After grilling, create `~/playground/pensieve/{name}/index.md`:
+After grilling, create `~/playground/pensieve/ideas/{name}/index.md`:
 
 ```markdown
 ---
@@ -87,7 +87,7 @@ git push
 
 ### 6. Confirm
 Tell user:
-- Detail doc at `~/playground/pensieve/{name}/index.md`
+- Detail doc at `~/playground/pensieve/ideas/{name}/index.md`
 - Logged in `INDEX.md`
 - Pushed to https://github.com/mostafa-K-raihan/Pensieve
 - "Start your next session from this doc — it has everything you need to continue."

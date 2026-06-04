@@ -1,6 +1,6 @@
 ---
 name: podcast-synthesize
-description: Synthesize a podcast episode from a YouTube URL into structured markdown. Fetches transcript, extracts key claims/frameworks/examples, saves to ~/playground/podcasts/{topic}/. Use when user shares a YouTube link and wants it synthesized, or says "synthesize this podcast", "process this episode", "add to knowledge base".
+description: Synthesize a podcast episode from a YouTube URL into structured markdown. Fetches transcript, extracts key claims/frameworks/examples, saves to ~/playground/pensieve/podcasts/{topic}/. Use when user shares a YouTube link and wants it synthesized, or says "synthesize this podcast", "process this episode", "add to knowledge base".
 ---
 
 ## Goal
@@ -90,7 +90,7 @@ tags: ["{topic}", "{additional tags}"]
 
 ### 5. Save file
 - Slug = lowercase episode title, spaces → hyphens, remove special chars
-- Path: `~/playground/podcasts/{topic}/{slug}.md`
+- Path: `~/playground/pensieve/podcasts/{topic}/{slug}.md`
 - Create topic folder if it doesn't exist
 
 ```bash
@@ -98,7 +98,7 @@ mkdir -p ~/playground/podcasts/{topic}
 ```
 
 ### 6. Update INDEX.md
-Append entry to `~/playground/podcasts/INDEX.md`:
+Append entry to `~/playground/pensieve/INDEX.md`:
 ```markdown
 | {Date} | [{Title}](./{topic}/{slug}.md) | {source} | {tags} |
 ```
