@@ -19,3 +19,4 @@ Agent skills — portable, reusable, agent-agnostic.
 | [tech-writing](./tech-writing/SKILL.md) | Draft, rewrite, and structure technical content — docs, READMEs, specs, guides |
 | [triage](./triage/SKILL.md) | Triage issues through a state machine driven by triage roles |
 | [zoom-out](./zoom-out/SKILL.md) | Zoom out and give broader context or higher-level perspective on code |
+| [add-skill](./add-skill/SKILL.md) | Design a new skill through grilling, write it locally, publish to shared skills repo |
